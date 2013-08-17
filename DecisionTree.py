@@ -1,5 +1,4 @@
 #! /usr/bin/ipython
-
 import os; os.chdir("/home/zhaowenlong/workspace/proj/dev.machinelearning/")
 #DecitionTree.py : wenlong
 #Description: show code about the decision tree; CART algorithms is used
@@ -139,7 +138,36 @@ def PrintTree(tree, indent=''):
         print indent+'F->',
         PrintTree(tree.false_node, indent+' ')
 
+
+def Prune(tree, mingain):
+    """see if merging them would increase the entropy by less than a specified threshold
+    """
+    #not leaves, prune them
+    if tree.true_node.results == None:
+        Prune(tree.true_node, mingain)
+    if tree.false_node.results == None:
+        Prune(tree.false_node, mingain)
+
+    #if both subbranches are leaves,
+    if tree.true_node.results != None and tree.false_node.results != None:
+        true_node = []
+        false_node = []
+        for n, c in tree.true_node.results.items():
+            true_node += [[n]]*c        
+        for n, c in tree.false_node.results.items(): 
+            false_node += [[n]]*c
+
+                #import pdb; pdb.set_trace()
+        #the reduction in Gini
+        # parameter delta a = ( Ca(T) - C(T) ) / |T|
+        delta = Gini(true_node + false_node) - (Gini(true_node) + Gini(false_node))
         
+        if delta < mingain:
+            #merge the branches
+            tree.results = UniqueCounts(true_node+false_node)
+            tree.true_node.results, tree.false_node.results = None, None
+       
+            
 def main():
     #my_data = [line.split('\t') for line in file('decision_tree_example.txt')]
     my_data=[['slashdot','USA','yes',18,'None'],
@@ -160,6 +188,9 @@ def main():
         ['kiwitobes','France','yes',19,'Basic']]
 
     tree=BuildTree(my_data)
+    PrintTree(tree)
+  
+    Prune(tree, 0.5)
     PrintTree(tree)
 
     
