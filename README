@@ -5,5 +5,5 @@ TODO: A toolbox for Statistical Machine Learning
 
 Features:
 --------------
-1) genRules.h, genRules.cpp, genRulesTest.cpp gives the output of Associal Rules
+1) genRules.h, genRules.cpp, genRulesTest.cpp,dataBase.cpp, dataBase.h,error.h gives the implementation of Associal Rules
 2) DecisionTree.py shows code about decision tree, where CART algorithms is used
