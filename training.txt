@@ -1,0 +1,3 @@
+o,o,x,o,b,negative
+o,b,x,b,o,negative
+x,x,b,b,x,positive
