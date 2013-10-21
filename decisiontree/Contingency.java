@@ -175,6 +175,6 @@ public class Contingency {
 				System.out.print("  "+ contingency_Table[i][j]);
 			}
 		}
-                System.out.println();
+        System.out.println();
 	}
 }

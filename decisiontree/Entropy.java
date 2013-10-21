@@ -43,8 +43,8 @@ public class Entropy {
 		int partialCount[] = new int [UtilityI.MAXATTRVAL];
 
 		ctable.createContigencyTable(rowName, colName, data);
-        System.out.println("the ctable:");
-        ctable.displayTable();
+        //System.out.print("the ctable:");
+        //ctable.displayTable();
         
 		int[][] contTable = ctable.getContingency_Table();
 		for(int i=0;i<UtilityI.MAXATTRVAL;i++)

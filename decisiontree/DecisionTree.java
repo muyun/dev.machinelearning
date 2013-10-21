@@ -75,7 +75,8 @@ public class DecisionTree {
 			}
             
 			trainingRecord.add(0, UtilityI.ATTRNAME);  //add UtilityI.ATTRNAME at 1st position
-                        
+
+            System.out.println("*****The data:*****");
             for (String [] s : trainingRecord) {
                 for(String str : s){
                     System.out.print(str + " ");
@@ -105,14 +106,16 @@ public class DecisionTree {
 			trainTree.leaves(root);  //the leaves of the decision tree is 'NEGATIVE' or 'POSITIVE'
 			trainTree.setClassLabel(trainingRecord, root);
             
-			double errorRate =  trainTree.calErrorRate(trainingRecord);
-			System.out.println("Training Error Rate : "+errorRate);
+			//double errorRate =  trainTree.calErrorRate(trainingRecord);
+			//System.out.println("Training Error Rate : "+errorRate);
 
 			//the test part
 			trainTree.setClassLabel(testRecord, root);
             
 			double testerror = trainTree.calErrorRate(testRecord);
-			System.out.println("Test Error Rate : "+testerror);
+
+            System.out.println("*********************");
+            System.out.println("Test Error Rate : "+testerror);
 
 		}catch(IOException ioe)
 		{

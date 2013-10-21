@@ -74,14 +74,14 @@ public class BuildTree {
 	}
 
 	//Find the best split and Construct the tree based on the best split.
-	public void constructTree(ArrayList<String[]> data , int level , Node node)
+	public void constructTree(ArrayList<String[]> data, int level, Node node)
 	{
 		String[] attrdata = data.get(0);
 
 		if(level ==0)
 		{
-			node.setRoot("root",ctable[level].col_title , "UNDECIDED", UtilityI.MAXATTRVAL);
-			node.contnode.createContigencyTable(attrdata[n-1],ctable[level].col_title  , data);
+			node.setRoot("root",ctable[level].col_title, "UNDECIDED", UtilityI.MAXATTRVAL);
+			node.contnode.createContigencyTable(attrdata[n-1], ctable[level].col_title, data);
 			node.contnode.calcount(attrdata[n-1], data);
 			nonodes = 1;    // num of nodes
 			numnodelevel[0] = 1;  // level
@@ -89,7 +89,7 @@ public class BuildTree {
 
 		ArrayList<String[]> attrs = DataSet.getAttributes();
 
-		for(int i=0;i < node.getNochild() ; i++)  //num of children
+		for(int i=0;i < node.getNochild(); i++)  //num of children
 		{
 			int temp=-1;
 			for(int j=0;j<n;j++)  //each attr, n =6 here
@@ -120,16 +120,15 @@ public class BuildTree {
 			node.childNodes[i].contnode.createContigencyTable(((String[])attrs.get(n-1))[0], ctable[1].col_title, subset);
 
 			node.childNodes[i].contnode.calcount(((String [])attrs.get(n-1))[0], subset);
-			if(0 == node.childNodes[i].contnode.count[0])
-			{
+			if(0 == node.childNodes[i].contnode.count[0])  //index 0 is defined in the place of 'negative'
+			{ //this is a leaf
 				node.childNodes[i].setClassLabel("NEGATIVE");
-			}
-			else if(0 == node.childNodes[i].contnode.count[1])
+                
+			}else if(0 == node.childNodes[i].contnode.count[1])
 			{
 				node.childNodes[i].setClassLabel("POSITIVE");
-			}
-			else
-			{
+                
+			}else{
 				if(level < mlevel)
 					constructTree(subset, level + 1, node.childNodes[i]);
 			}
@@ -226,7 +225,13 @@ public class BuildTree {
 		double flag = 0.0;
 		double errorRate=0.0;
 		double maxattr = 3.0;
-
+        /*
+        for(int i =1; i < data.size()-1; i++)
+        {
+            System.out.println("actual labels:" + data.get(i)[n-1] + ",assigned labels:" + assignedLabels[i]);
+            
+        }
+        */
 		for(int i=0;i<data.size()-1;i++)
 		{  
 			if(((String [])data.get(i))[n-1].equals(assignedLabels[i] ))
@@ -240,6 +245,7 @@ public class BuildTree {
 			errorRate= (errorRate - maxattr);
 		else if(errorRate!=flag || errorRate < maxattr)
 			errorRate=(errorRate+flag);
+        
 		return errorRate;
 	}
 }

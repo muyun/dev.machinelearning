@@ -45,11 +45,11 @@ public class DataSet {
     //Set the required attributes 
 	public static void setAttributes()
 	{
-		attributeList.add(UtilityI.TOP_LEFT_SQUARE.split(","));
-		attributeList.add(UtilityI.TOP_MIDDLE_SQUARE.split(","));
-		attributeList.add(UtilityI.TOP_RIGHT_SQUARE.split(","));
-		attributeList.add(UtilityI.MIDDLE_LEFT_SQUARE.split(","));
-		attributeList.add(UtilityI.MIDDLE_MIDDLE_SQUARE.split(","));	
+		attributeList.add(UtilityI.TOP_LEFT.split(","));
+		attributeList.add(UtilityI.TOP_MIDDLE.split(","));
+		attributeList.add(UtilityI.TOP_RIGHT.split(","));
+		attributeList.add(UtilityI.MIDDLE_LEFT.split(","));
+		attributeList.add(UtilityI.MIDDLE_MIDDLE.split(","));	
 
 		attributeList.add(UtilityI.CLASS_LABEL.split(","));
 
