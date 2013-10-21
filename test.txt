@@ -1,3 +1,8 @@
 x,x,b,o,x,positive
 x,o,o,b,x,positive
-o,o,x,b,b,negative
+o,o,o,o,x,negative
+x,b,b,x,o,positive
+x,b,o,x,x,positive
+x,x,b,o,o,negative
+x,o,o,x,b,positive
+
