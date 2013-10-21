@@ -87,7 +87,7 @@ public class BuildTree {
 			numnodelevel[0] = 1;  // level
 		}
 
-		ArrayList<String[]> attrs = RecordSet.getAttributes();
+		ArrayList<String[]> attrs = DataSet.getAttributes();
 
 		for(int i=0;i < node.getNochild() ; i++)  //num of children
 		{
@@ -102,22 +102,21 @@ public class BuildTree {
 			if(temp != -1){ //get the best split attr
 				for(int k=0;k<data.size()-1;k++)
 				{
-					if(node.contnode.colNames[i].equals(data.get(k+1)[temp]))
+					if(node.contnode.colValues[i].equals(data.get(k+1)[temp]))
 					{ // x/o, x
-                                          System.out.println(nodeobj.contnode.colNames[i] + "++++++" + data.get(k+1)[temp]);
-                                          nodeobj.setParentLinkList(k, i); //plinklist[i].add(new Integer(k));
+                        node.setParentLinkList(k, i); //plinklist[i].add(new Integer(k));
 					}
 
 				}
 			}
 
-			node.childNodes[i]=new Node(ctable[level].colNames[i],ctable[level+1].col_title,"UNDECIDED",UtilityI.MAXATTRVAL);
+			node.childNodes[i]=new Node(ctable[level].colValues[i],ctable[level+1].col_title,"UNDECIDED",UtilityI.MAXATTRVAL);
 			nonodes++;
 			numnodelevel[level+1]++; //next level
 
 			DataSet childdata = new DataSet();
 
-			ArrayList<String[]> subset = childdata.branch(nodeobj.plinklist[i], data);
+			ArrayList<String[]> subset = childdata.branch(node.plinklist[i], data);
 			node.childNodes[i].contnode.createContigencyTable(((String[])attrs.get(n-1))[0], ctable[1].col_title, subset);
 
 			node.childNodes[i].contnode.calcount(((String [])attrs.get(n-1))[0], subset);
@@ -132,7 +131,7 @@ public class BuildTree {
 			else
 			{
 				if(level < mlevel)
-					constructTree(subset, level + 1, nodeobj.childNodes[i]);
+					constructTree(subset, level + 1, node.childNodes[i]);
 			}
 
 		}
@@ -190,7 +189,7 @@ public class BuildTree {
 			  for(int k=0;k<node.nochild;k++)
 			  {   
 			    if( ((String[])data.get(currRec)).length == 6){
-			     if(node.contnode.colNames[k].equals(((String[])data.get(currRec))[j]))		    			   
+			     if(node.contnode.colValues[k].equals(((String[])data.get(currRec))[j]))		    			   
 						{ 		    			
 							for( l=0;l<node.nochild;l++)
 								if(l == k)	

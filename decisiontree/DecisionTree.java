@@ -1,4 +1,4 @@
-package classification;
+package decisiontree;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -10,6 +10,7 @@ import java.util.ArrayList;
  * @author wenlong
  * This class implements the decision tree classification
  */
+
 public class DecisionTree {
 
 	private static final String TRAININGFILE="training.txt";
@@ -48,7 +49,7 @@ public class DecisionTree {
 			String trainingLine;
 			String testLine;
 			DataSet  dataSet = new DataSet();
-
+            
 			ArrayList<String[]> trainingRecord = new ArrayList<String[]>(); 
 			ArrayList<String[]> testRecord = new ArrayList<String[]>();
 

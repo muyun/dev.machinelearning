@@ -23,10 +23,10 @@ public class DataSet {
 	}
 
 	public int getNumRec() {
-		return numRec;
+		return numData;
 	}
 	public  void setNumRec(int noRec) {
-		numRec = noRec;
+		numData = noRec;
 	}
 
 	//Insert the record. 

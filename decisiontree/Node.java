@@ -1,8 +1,8 @@
-package classification;
+package decisiontree;
 
 import java.util.ArrayList;
 
-public class Node{
+public class Node {
 
 	String parentLink;
 	String name;
