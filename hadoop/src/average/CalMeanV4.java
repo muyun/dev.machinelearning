@@ -30,12 +30,12 @@ import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 //parser the hadoop command parameters
 import org.apache.hadoop.util.GenericOptionsParser;
-import org.apache.hadoop.util.Tool;
-import org.apache.hadoop.util.ToolRunner;
+//import org.apache.hadoop.util.Tool;
+//import org.apache.hadoop.util.ToolRunner;
 // JobConf extends Configuration
 // a map/reduce job configuratjion
-import org.apache.hadoop.mapred.JobConf;
-import org.apache.hadoop.mapred.JobClient;
+//import org.apache.hadoop.mapred.JobConf;
+//import org.apache.hadoop.mapred.JobClient;
 
 //the configuration
 import org.apache.hadoop.conf.Configuration;
@@ -45,7 +45,7 @@ import org.apache.hadoop.conf.Configuration;
 //and modifies the Configuration fo the Tool
 //import org.apache.hadoop.util.ToolRunner;
 //
-import org.apache.hadoop.conf.Configured;
+//import org.apache.hadoop.conf.Configured;
 
 public class CalMeanV4 { 
     //Mapper<K1, V1, K2, V2>
