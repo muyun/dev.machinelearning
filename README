@@ -1,8 +1,13 @@
 DESCRIPTION:
 
-TODO: A toolbox for Statistical Machine Learning
+1) A toolbox for Statistical Machine Learning
+2) some about Hadoop
 
 Features:
---------------
-1) genRules.h, genRules.cpp, genRulesTest.cpp,dataBase.cpp, dataBase.h,error.h gives the implementation of Associal Rules
-2) DecisionTree.py shows code about decision tree, where CART algorithms is used
+-------------------
+1) Association Rule
+2) Decision Tree, where CART algorithms is used
+3) k-means
+4) Naive Bayes
+5) linear SVM
+
