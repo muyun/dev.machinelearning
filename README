@@ -9,7 +9,7 @@ Features:
 2) Decision Tree, where CART algorithms is used
 3) k-means
 4) Naive Bayes
-5) linear SVM
+5) linear SVM (some code borrows from libsvm)
 
 TODO:
 1) add more features
