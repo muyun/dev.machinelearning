@@ -4,7 +4,7 @@ import java.util.*;
 
 /**
  * class containing the SVM's train and test metods
- * some code is from libsvm
+ * main functions is from libsvm
  * @author wenlong
  *
  */

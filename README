@@ -10,7 +10,12 @@ Features:
 3) k-means
 4) Naive Bayes
 5) linear SVM (some code borrows from libsvm)
+   - TODO- summary the SMO and the related optimization
 
 TODO:
 1) add more features
+
+Reference:
+- [Learning from Data from Prof.Yaser S. Abu-Mostafa](http://work.caltech.edu/library/index.html)
+- 
 
