@@ -12,7 +12,7 @@
   - Sentiment analysis in the Mobile phone industry (~/practice/)
  
 * Reference:
-  - [Learning from Data from Prof.Yaser S. Abu-Mostafa](http://work.caltech.edu/library/index.html)
+  - [Learning from Data from Prof.Yaser S. Abu-Mostafa](http://work.caltech.edu/library/index.html) 
   -《统计学习方法》by 李航
 
 2) Some about Hadoop
