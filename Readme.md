@@ -11,8 +11,12 @@
 * Some practice
   - Sentiment analysis in the Mobile phone industry (~/practice/)
  
+
+* CNN (TODO)
+  - [CS231n: Convolutional Neural Networks for Visual Recognition](http://cs231n.stanford.edu/syllabus.html)
+
 * Reference:
   - [Learning from Data from Prof.Yaser S. Abu-Mostafa](http://work.caltech.edu/library/index.html)  
   - 《统计学习方法》by 李航 
 
-#### Some about Hadoop
+#### 
