@@ -12,6 +12,9 @@
   - Sentiment analysis in the Mobile phone industry (~/practice/)
  
 
+* LICENSE
+Apache License 2.0
+
 * CNN (TODO)
   - [CS231n: Convolutional Neural Networks for Visual Recognition](http://cs231n.stanford.edu/syllabus.html)
 
