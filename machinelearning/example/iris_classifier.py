@@ -27,16 +27,21 @@ def get_iris_dataset():
     print("Type of data: {}".format(iris_dataset['data'].shape))     # (150,4)
     print("Type of target: {}".format(iris_dataset['target'].shape)) # (150,)
 
+    #import pdb; pdb.set_trace()
 
     #2. split the dataset into training set and testing set
-    X_train, X_test, y_train, y_test = train_test_split(iris_dataset['data'], iris_dataset['target'], random_state=0)
+    # y = f(X)
+    X_train, X_test, y_train, y_test = train_test_split(iris_dataset['data'], iris_dataset['target'],test_size=0.2, random_state=0)
     print("X_train shape: {}".format(X_train.shape))
     print("y_train shape: {}".format(y_train.shape))
 
     print("X_test shape: {}".format(X_test.shape))
     print("y_test shape: {}".format(y_test.shape))
 
-    # 3. inspect the data
+
+    #import pdb; pdb.set_trace()
+
+    # 3. inspect the data - virtualize it
     # convert Numpy array int oa pandas DataFrame
     iris_dataframe = pd.DataFrame(X_train, columns=iris_dataset.feature_names)
 
@@ -44,6 +49,8 @@ def get_iris_dataset():
     grr = pd.scatter_matrix(iris_dataframe, c=y_train, figsize=(15,15), marker='o', hist_kwds={'bins':20}, s=60, alpha=.8, cmap=mglearn.cm3)
     plt.show()
 
+
+    #import pdb; pdb.set_trace()
 
     # The modelu
     from sklearn.neighbors import KNeighborsClassifier

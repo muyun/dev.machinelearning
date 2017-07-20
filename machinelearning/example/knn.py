@@ -4,11 +4,11 @@
 """
 import load_data
 
-def knn():
+def knn_classification():
 
 
 def main():
-    knn()
+    knn_classification()
 
 if __name__ == "__main__":
     main()

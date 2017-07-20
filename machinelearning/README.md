@@ -1,6 +1,7 @@
 ####
 
 #### reference
+- [Stanford Deep Learning Tutorial](http://ufldl.stanford.edu/tutorial/)
 - [Machine Learning](https://courses.edx.org/courses/course-v1:ColumbiaX+CSMM.102x+2T2017/course/)
 - [Machine Learning: 2014-2015](https://www.cs.ox.ac.uk/people/nando.defreitas/machinelearning/)
 - [COS 495-Introduction to Deep Learning -Spring 2016](https://www.cs.princeton.edu/courses/archive/spring16/cos495/)
