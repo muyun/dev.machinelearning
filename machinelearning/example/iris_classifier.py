@@ -5,6 +5,7 @@ from sklearn.datasets import load_iris
 
 from sklearn.model_selection import train_test_split
 
+# pandas provides table da
 import pandas as pd
 from pandas.tools.plotting import scatter_matrix
 
